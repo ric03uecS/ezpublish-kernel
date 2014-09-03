@@ -149,7 +149,7 @@ class Handler implements PersistenceHandlerInterface
     }
 
     /**
-     * @return \eZ\Publish\SPI\Persistence\Content\Search\Handler
+     * @return \eZ\Publish\SPI\Search\Handler
      */
     public function searchHandler()
     {
