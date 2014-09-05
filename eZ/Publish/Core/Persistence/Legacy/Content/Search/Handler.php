@@ -94,11 +94,13 @@ class Handler implements SearchHandlerInterface
             throw new NotImplementedException( "Facets are not supported by the legacy search engine." );
         }
 
+        $translations = !empty( $fieldFilters['languages'] ) ? $fieldFilters['languages'] : null;
+
         // The legacy search does not know about scores, so that we just
         // combine the query with the filter
         $filter = new Criterion\LogicalAnd( array( $query->query, $query->filter ) );
 
-        $data = $this->gateway->find( $filter, $query->offset, $query->limit, $query->sortClauses, null );
+        $data = $this->gateway->find( $filter, $query->offset, $query->limit, $query->sortClauses, $translations );
 
         $result = new SearchResult();
         $result->time = microtime( true ) - $start;

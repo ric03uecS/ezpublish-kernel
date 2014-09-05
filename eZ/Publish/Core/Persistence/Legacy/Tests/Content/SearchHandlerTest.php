@@ -398,8 +398,6 @@ class SearchHandlerTest extends LanguageAwareTestCase
 
     public function testFindWithExistingLanguageFields()
     {
-        $this->markTestSkipped( "Translation filters are currently not supported by new search API." );
-
         $locator = $this->getContentSearchHandler();
 
         $result = $locator->findContent(
@@ -407,10 +405,10 @@ class SearchHandlerTest extends LanguageAwareTestCase
                 array(
                     'filter'    => new Criterion\ContentId( 11 ),
                     'offset'       => 0,
-                    'limit'        => null,
-                    'translations' => array( 'eng-US' )
+                    'limit'        => null
                 )
-            )
+            ),
+            array( 'languages' => array( 'eng-US' ) )
         );
 
         $this->assertEquals(
@@ -421,8 +419,6 @@ class SearchHandlerTest extends LanguageAwareTestCase
 
     public function testFindWithMissingLanguageFields()
     {
-        $this->markTestSkipped( "Translation filters are currently not supported by new search API." );
-
         $locator = $this->getContentSearchHandler();
 
         $result = $locator->findContent(
@@ -430,10 +426,10 @@ class SearchHandlerTest extends LanguageAwareTestCase
                 array(
                     'filter' => new Criterion\ContentId( 4 ),
                     'offset'       => 0,
-                    'limit'        => null,
-                    'translations' => array( 'eng-GB' )
+                    'limit'        => null
                 )
-            )
+            ),
+            array( 'languages' => array( 'eng-GB' ) )
         );
 
         $this->assertEquals(

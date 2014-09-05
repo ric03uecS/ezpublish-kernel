@@ -137,7 +137,8 @@ class SearchService implements SearchServiceInterface
         foreach ( $result->searchHits as $hit )
         {
             $hit->valueObject = $contentService->loadContent(
-                $hit->valueObject->id
+                $hit->valueObject->id,
+                ( isset( $fieldFilters['languages'] ) ? $fieldFilters['languages'] : null )
             );
         }
 
@@ -261,7 +262,8 @@ class SearchService implements SearchServiceInterface
 
         $contentInfo = $this->searchHandler->findSingle( $filter, $fieldFilters );
         return $this->repository->getContentService()->loadContent(
-            $contentInfo->id
+            $contentInfo->id,
+            ( isset( $fieldFilters['languages'] ) ? $fieldFilters['languages'] : null )
         );
     }
 
