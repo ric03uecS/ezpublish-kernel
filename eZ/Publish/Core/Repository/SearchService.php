@@ -58,7 +58,7 @@ class SearchService implements SearchServiceInterface
     protected $settings;
 
     /**
-     * @var \eZ\Publish\Core\Repository\DomainMapper
+     * @var \eZ\Publish\Core\Repository\Helper\DomainMapper
      */
     protected $domainMapper;
 
@@ -73,7 +73,7 @@ class SearchService implements SearchServiceInterface
      * @param \eZ\Publish\API\Repository\Repository $repository
      * @param \eZ\Publish\SPI\Persistence\Content\Search\Handler $searchHandler
      * @param \eZ\Publish\SPI\Persistence\Content\Location\Search\Handler $locationSearchHandler
-     * @param \eZ\Publish\Core\Repository\DomainMapper $domainMapper
+     * @param \eZ\Publish\Core\Repository\Helper\DomainMapper $domainMapper
      * @param \eZ\Publish\Core\Repository\PermissionsCriterionHandler $permissionsCriterionHandler
      * @param array $settings
      */
@@ -81,7 +81,7 @@ class SearchService implements SearchServiceInterface
         RepositoryInterface $repository,
         Handler $searchHandler,
         LocationSearchHandler $locationSearchHandler,
-        DomainMapper $domainMapper,
+        Helper\DomainMapper $domainMapper,
         PermissionsCriterionHandler $permissionsCriterionHandler,
         array $settings = array()
     )
