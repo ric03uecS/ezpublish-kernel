@@ -33,6 +33,14 @@ Note: PHP Object names referred to in these examples exist in the \eZ\Publish\AP
   _Since 5.2, starting 5.3 it optionally supports Field object as second argument_
   `bool = ez_is_field_empty( Content $content, string|Field $fieldDefIdentifier[, string $forceLanguage] )`
 
+* ez_field_name
+  _Since 5.4_
+  `string|null = ez_field_name( Content|ContentInfo $content, string $fieldDefIdentifier[, string $forceLanguage] )`
+
+* ez_field_description
+  _Since 5.4_
+  `string|null = ez_field_description( Content|ContentInfo $content, string $fieldDefIdentifier[, string $forceLanguage] )`
+
 
 ## Rendering helpers
 
