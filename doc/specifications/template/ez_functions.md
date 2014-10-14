@@ -41,6 +41,13 @@ Note: PHP Object names referred to in these examples exist in the \eZ\Publish\AP
   _Since 5.4_
   `string|null = ez_field_description( Content|ContentInfo $content, string $fieldDefIdentifier[, string $forceLanguage] )`
 
+* ez_trans_prop
+  _Since 5.4_
+  `string|null = ez_trans_prop( \eZ\Publish\API\Repository\Values\ValueObject $object, string $property[, string $forceLanguage] )`
+
+  Example: `ez_trans_prop( $versionInfo, 'name' )` will provide the same result as using ez_content_name(), in both
+           cases `VersionInfo->getName($lang)` is used in prioritized language order, with fallback to initial language.
+
 
 ## Rendering helpers
 
