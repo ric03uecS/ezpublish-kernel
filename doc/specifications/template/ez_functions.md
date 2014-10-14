@@ -22,27 +22,39 @@ Example: In the case of Content objects, which has a always available flag, if t
 Note: PHP Object names referred to in these examples exist in the \eZ\Publish\API\Repository\Values\Content namespace!
 
 * ez_content_name
+
   _Since 5.2_
+
   `string = ez_content_name( Content|ContentInfo $content[, string $forceLanguage] )`
 
 * ez_field_value
+
   _Since 5.2_
+
   `Field|null = ez_field_value( Content $content, string $fieldDefIdentifier[, string $forceLanguage] )`
 
 * ez_is_field_empty
+
   _Since 5.2, starting 5.3 it optionally supports Field object as second argument_
+
   `bool = ez_is_field_empty( Content $content, string|Field $fieldDefIdentifier[, string $forceLanguage] )`
 
 * ez_field_name
+
   _Since 5.4_
+
   `string|null = ez_field_name( Content|ContentInfo $content, string $fieldDefIdentifier[, string $forceLanguage] )`
 
 * ez_field_description
+
   _Since 5.4_
+
   `string|null = ez_field_description( Content|ContentInfo $content, string $fieldDefIdentifier[, string $forceLanguage] )`
 
 * ez_trans_prop
+
   _Since 5.4_
+
   `string|null = ez_trans_prop( \eZ\Publish\API\Repository\Values\ValueObject $object, string $property[, string $forceLanguage] )`
 
   Example: `ez_trans_prop( $versionInfo, 'name' )` will provide the same result as using ez_content_name(), in both
@@ -54,9 +66,13 @@ Note: PHP Object names referred to in these examples exist in the \eZ\Publish\AP
 Group of helpers to deal with rendering, mainly of field values and it's settings.
 
 * ez_render_field
+
   _Since 5.1_
+
   `ez_render_field( Content $content, string $fieldDefIdentifier[, array $params ] )`
 
 * ez_render_fielddefinition_settings
+
   _Since 5.2_
+
   `ez_render_fielddefinition_settings( \eZ\Publish\API\Repository\Values\ContentType\FieldDefinition $definition )`
