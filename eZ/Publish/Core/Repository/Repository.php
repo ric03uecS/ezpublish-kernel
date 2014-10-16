@@ -841,7 +841,11 @@ class Repository implements RepositoryInterface
             $this->persistenceHandler->locationHandler(),
             $this->persistenceHandler->contentTypeHandler(),
             $this->persistenceHandler->contentLanguageHandler(),
-            $this->getFieldTypeService()
+            $this->getFieldTypeService(),
+            array(
+                'user' => new Helper\DomainTypeMapper\UserDomainTypeMapper(),
+                'user_group' => new Helper\DomainTypeMapper\UserGroupDomainTypeMapper()
+            )
         );
         return $this->domainMapper;
     }
